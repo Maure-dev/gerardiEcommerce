@@ -50,31 +50,31 @@ const NavBar = () => {
                 Categorías
               </MenuButton>
               <MenuList>
-                <MenuItem minH="60px">
-                  <Link to={`/category/${"HP"}`}>
+                <Link to={`/category/${"HP"}`}>
+                  <MenuItem minH="60px">
                     <span>HP</span>
-                  </Link>
-                </MenuItem>
-                <MenuItem minH="60px">
-                  <Link to={`/category/${"Lenovo"}`}>
+                  </MenuItem>
+                </Link>
+                <Link to={`/category/${"Lenovo"}`}>
+                  <MenuItem minH="60px">
                     <span>Lenovo</span>
-                  </Link>
-                </MenuItem>
-                <MenuItem minH="60px">
-                  <Link to={`/category/${"Acer"}`}>
+                  </MenuItem>
+                </Link>
+                <Link to={`/category/${"Acer"}`}>
+                  <MenuItem minH="60px">
                     <span>Acer</span>
-                  </Link>
-                </MenuItem>
-                <MenuItem minH="60px">
-                  <Link to={`/category/${"LG"}`}>
+                  </MenuItem>
+                </Link>
+                <Link to={`/category/${"LG"}`}>
+                  <MenuItem minH="60px">
                     <span>LG</span>
-                  </Link>
-                </MenuItem>
-                <MenuItem minH="60px">
-                  <Link to={`/category/${"Samsung"}`}>
+                  </MenuItem>
+                </Link>
+                <Link to={`/category/${"Samsung"}`}>
+                  <MenuItem minH="60px">
                     <span>Samsung</span>
-                  </Link>
-                </MenuItem>
+                  </MenuItem>
+                </Link>
               </MenuList>
             </Menu>
           </Box>

@@ -14,17 +14,15 @@ function App() {
           <NavBar />
           <Routes>
             <Route
-              exact
               path="/"
               element={<ItemListContainer greeting={message} />}
             />
             <Route
-              exact
               path="/category/:category"
               element={<ItemListContainer greeting={message} />}
             />
-            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-            {/* <Route exact path="/cart" element={<Cart />} /> */}
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            {/* <Route path="/cart" element={<Cart />} /> */}
           </Routes>
         </div>
       </BrowserRouter>
