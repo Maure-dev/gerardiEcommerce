@@ -38,11 +38,11 @@ const Item = ({ item }) => {
             </CardBody>
             <Center>
               <CardFooter>
-                <Button variant="solid" colorScheme="purple">
-                  <Link to={`/item/${item.id}`}>
+                <Link to={`/item/${item.id}`}>
+                  <Button variant="solid" colorScheme="purple">
                     <Text>Ver Detalles</Text>
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </CardFooter>
             </Center>
           </Card>

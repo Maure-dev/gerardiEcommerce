@@ -51,27 +51,27 @@ const NavBar = () => {
               </MenuButton>
               <MenuList>
                 <Link to={`/category/${"HP"}`}>
-                  <MenuItem minH="60px">
+                  <MenuItem minH="60px" as="b" textTransform="uppercase">
                     <span>HP</span>
                   </MenuItem>
                 </Link>
                 <Link to={`/category/${"Lenovo"}`}>
-                  <MenuItem minH="60px">
+                  <MenuItem minH="60px" as="b" textTransform="uppercase">
                     <span>Lenovo</span>
                   </MenuItem>
                 </Link>
                 <Link to={`/category/${"Acer"}`}>
-                  <MenuItem minH="60px">
+                  <MenuItem minH="60px" as="b" textTransform="uppercase">
                     <span>Acer</span>
                   </MenuItem>
                 </Link>
                 <Link to={`/category/${"LG"}`}>
-                  <MenuItem minH="60px">
+                  <MenuItem minH="60px" as="b" textTransform="uppercase">
                     <span>LG</span>
                   </MenuItem>
                 </Link>
                 <Link to={`/category/${"Samsung"}`}>
-                  <MenuItem minH="60px">
+                  <MenuItem minH="60px" as="b" textTransform="uppercase">
                     <span>Samsung</span>
                   </MenuItem>
                 </Link>
