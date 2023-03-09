@@ -9,16 +9,28 @@ import {
   CardHeader,
   CardFooter,
   Button,
-  Flex,
-  Spacer,
 } from "@chakra-ui/react";
 import ItemCount from "./ItemCount";
 import { Link, useParams } from "react-router-dom";
-import React from "react";
+import { useEffect, useState } from "react";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetail = ({ item }) => {
   const { id } = useParams();
-  const itemFiltered = item.filter((item) => item.id == id);
+
+  const [itemBuy, setItemBuy] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore();
+    const notebookId = doc(db, "Notebooks", `${id}`);
+    getDoc(notebookId).then((item) => {
+      if (item.exists()) {
+        setItemBuy(item.data());
+      }
+    });
+  }, []);
+
+  const itemFiltered = item.filter((itemFilter) => itemFilter.id == id);
 
   return (
     <>
@@ -52,7 +64,7 @@ const ItemDetail = ({ item }) => {
               <Center>
                 <CardFooter>
                   <Stack direction="column">
-                    <ItemCount stock={item.stock} />
+                    <ItemCount items={item} />
                     <Link to={-1}>
                       <Button variant="outline" colorScheme="purple">
                         <Text>Volver</Text>

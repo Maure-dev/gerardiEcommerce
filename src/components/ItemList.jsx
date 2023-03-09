@@ -1,5 +1,4 @@
 import { Container, SimpleGrid } from "@chakra-ui/react";
-import React from "react";
 import Item from "./Item";
 
 const ItemList = ({ items }) => {

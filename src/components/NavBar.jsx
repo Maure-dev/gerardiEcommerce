@@ -1,4 +1,3 @@
-import React from "react";
 import CartWidget from "./CartWidget";
 import {
   Menu,
@@ -24,6 +23,12 @@ const NavBar = () => {
         backgroundColor="#dcd3f0"
         color="#6b46c1"
         borderRadius="10rem"
+        position="fixed"
+        top="0"
+        left="0"
+        width="100%"
+        height="100px"
+        zIndex="10"
       >
         <Flex minWidth="max-content" alignItems="center" gap="2">
           <Link to={"/"}>

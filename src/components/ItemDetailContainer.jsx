@@ -1,26 +1,19 @@
-import React from "react";
 import { useState, useEffect } from "react";
-import Products from "../Products.json";
 import ItemDetail from "./ItemDetail";
-import { useParams } from "react-router";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const { id } = useParams();
   const [item, setItem] = useState([]);
-  const getItem = async () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (Products.length === 0) {
-          reject(new Error("No hay Items para visualizar"));
-        }
-        const itemFiltered = Products.filter((item) => item.id == id);
-        resolve(itemFiltered);
-      }, 2000);
-    });
-  };
-
   useEffect(() => {
-    getItem().then((item) => setItem(item));
+    const db = getFirestore();
+    const notebooks = collection(db, "Notebooks");
+    getDocs(notebooks).then((items) => {
+      const notebooks = items.docs.map((item) => ({
+        ...item.data(),
+        id: item.id,
+      }));
+      setItem(notebooks);
+    });
   }, []);
 
   return (

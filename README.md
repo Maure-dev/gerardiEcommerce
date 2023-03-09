@@ -25,6 +25,7 @@ functional analyst
 - HTML5
 - CSS
 - Bootstrap
+- Tailwind
 - AngularJS
 - Angular Material
 - ASP.NET
@@ -34,9 +35,9 @@ functional analyst
 - SQL
 - MongoDB
 
-<!--## Demo
+## Demo
 
- ![Logo](Se espera Link o GIF) -->
+![Demo](./public/Presentation.gif)
 
 ## Run Locally
 

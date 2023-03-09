@@ -1,8 +1,10 @@
-import { React, useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Grid, IconButton } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
+import { CartContext } from "../context/CartContext";
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ items }) => {
+  const { addToCart } = useContext(CartContext);
   const [cant, setCant] = useState(0);
 
   const onAdd = () => {
@@ -27,13 +29,14 @@ const ItemCount = ({ stock }) => {
         <Button
           isDisabled={cant <= 0}
           size="sm"
+          onClick={() => addToCart(items, cant)}
           variant="outline"
           colorScheme="purple"
         >
           Añadir al carrito - {cant}
         </Button>
         <IconButton
-          isDisabled={cant >= stock}
+          isDisabled={cant >= items.stock}
           size="sm"
           colorScheme="purple"
           aria-label="Sumar Producto"
